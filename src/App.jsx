@@ -2,36 +2,42 @@ import { useState } from "react";
 import "../style/app.css";
 
 function General() {
-  return <>General</>;
+  return <div>General</div>;
 }
 
 function Educational() {
-  return <>Educational</>;
+  return <div>Educational</div>;
 }
 
 function Practical() {
-  return <>Practical</>;
+  return <div>Practical</div>;
 }
 
-function Accordion({ children }) {
+function Accordion({ children, accordionId, selected, onSelect }) {
   return (
     <section>
-      <div className="accordion-switch">hide content</div>
-      {children}
+      <div className="accordion-switch" onClick={() => {onSelect(accordionId)}}>{selected === accordionId ? "Editing" : "Edit" }</div>
+      {selected === accordionId ? children : null}
     </section>
   );
 }
 
 function CV() {
+  const [selected, setSelected] = useState(0);
+
+  function select(accordionId) {
+    setSelected(accordionId);
+  }
+
   return (
     <form className="application">
-      <Accordion>
+      <Accordion accordionId={0} selected={selected} onSelect={select}>
         <General></General>
       </Accordion>
-      <Accordion>
+      <Accordion accordionId={1} selected={selected} onSelect={select}>
         <Educational></Educational>
       </Accordion>
-      <Accordion>
+      <Accordion accordionId={2} selected={selected} onSelect={select}>
         <Practical></Practical>
       </Accordion>
       <button type="button">Submit</button>
