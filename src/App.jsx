@@ -1,10 +1,23 @@
+import { useState } from "react";
 import "../style/app.css";
 
-function Accordion() {
+function General() {
+  return <>General</>;
+}
+
+function Educational() {
+  return <>Educational</>;
+}
+
+function Practical() {
+  return <>Practical</>;
+}
+
+function Accordion({ children }) {
   return (
     <section>
       <div className="accordion-switch">hide content</div>
-      <div className="accordion-content">content</div>
+      {children}
     </section>
   );
 }
@@ -12,9 +25,16 @@ function Accordion() {
 function CV() {
   return (
     <form className="application">
-      <Accordion></Accordion>
-      <Accordion></Accordion>
-      <Accordion></Accordion>
+      <Accordion>
+        <General></General>
+      </Accordion>
+      <Accordion>
+        <Educational></Educational>
+      </Accordion>
+      <Accordion>
+        <Practical></Practical>
+      </Accordion>
+      <button type="button">Submit</button>
     </form>
   );
 }
