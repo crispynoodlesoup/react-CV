@@ -1,0 +1,46 @@
+.cv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.accordion {
+  border: 2px solid #9b9b9b;
+  width: 300px;
+  flex: 0 0 auto;
+}
+
+.accordion-switch {
+  padding: 12px;
+  background-color: lightgray;
+}
+
+.accordion-switch:hover {
+  cursor: pointer;
+  background-color: #c3dee7;
+}
+
+.accordion-content {
+  background-color: white;
+  padding: 12px;
+}
+
+.cv-form > button {
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: white;
+  background-color: rgb(133, 133, 133);
+  border: 1px solid black;
+
+  align-self: flex-end;
+}
+
+.cv-form > button:hover {
+  background-color: rgb(128, 127, 127);
+  cursor: pointer;
+}
+
+.cv-form > button:active {
+  background-color: rgb(140, 140, 140);
+}
