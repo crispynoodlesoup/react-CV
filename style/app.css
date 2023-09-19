@@ -23,9 +23,23 @@
 .accordion-content {
   background-color: white;
   padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.cv-form > button {
+input[type="text"], input[type="tel"], input[type="email"] {
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.accordion-content p {
+  width: 100%;
+}
+
+.accordion-content > button {
   padding: 8px;
   font-size: 16px;
   font-weight: 800;
@@ -36,11 +50,11 @@
   align-self: flex-end;
 }
 
-.cv-form > button:hover {
+.accordion-content > button:hover {
   background-color: rgb(128, 127, 127);
   cursor: pointer;
 }
 
-.cv-form > button:active {
+.accordion-content > button:active {
   background-color: rgb(140, 140, 140);
 }
