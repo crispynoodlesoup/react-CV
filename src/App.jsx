@@ -16,7 +16,6 @@ function General() {
         <label htmlFor="phone">Phone Number</label>
         <input id="phone" type="tel" placeholder="555-555-5555" />
       </p>
-      <button type="button">Submit</button>
     </div>
   );
 }
@@ -36,7 +35,6 @@ function Educational() {
         <label htmlFor="study-date">Date of Study</label>
         <input id="study-date" type="date" min="1924-01-01" max="2024-06-01" />
       </p>
-      <button type="button">Submit</button>
     </div>
   );
 }
@@ -56,7 +54,6 @@ function Practical() {
         <label htmlFor="job-description">Job Description:</label>
         <textarea id="job-description" cols="30" rows="10"></textarea>
       </p>
-      <button type="button">Submit</button>
     </div>
   );
 }
@@ -77,7 +74,7 @@ function Accordion({ children, accordionId, selected, onSelect }) {
   );
 }
 
-function CV() {
+function SideBar() {
   const [selected, setSelected] = useState("General");
 
   function select(accordionId) {
@@ -85,31 +82,43 @@ function CV() {
   }
 
   return (
-    <form className="cv-form">
-      <Accordion accordionId={"General"} selected={selected} onSelect={select}>
-        <General></General>
-      </Accordion>
-      <Accordion
-        accordionId={"Educational"}
-        selected={selected}
-        onSelect={select}
-      >
-        <Educational></Educational>
-      </Accordion>
-      <Accordion
-        accordionId={"Practical"}
-        selected={selected}
-        onSelect={select}
-      >
-        <Practical></Practical>
-      </Accordion>
-    </form>
+    <aside>
+      <h1>CV form Generator!</h1>
+      <form className="cv-form" onSubmit={(e) => e.preventDefault()}>
+        <Accordion
+          accordionId={"General"}
+          selected={selected}
+          onSelect={select}
+        >
+          <General></General>
+        </Accordion>
+        <Accordion
+          accordionId={"Educational"}
+          selected={selected}
+          onSelect={select}
+        >
+          <Educational></Educational>
+        </Accordion>
+        <Accordion
+          accordionId={"Practical"}
+          selected={selected}
+          onSelect={select}
+        >
+          <Practical></Practical>
+        </Accordion>
+      </form>
+    </aside>
   );
+}
+
+function CV() {
+  return <main></main>;
 }
 
 function App() {
   return (
     <>
+      <SideBar></SideBar>
       <CV></CV>
     </>
   );
