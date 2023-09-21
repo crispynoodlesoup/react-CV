@@ -67,7 +67,8 @@ function Accordion({ children, accordionId, selected, onSelect }) {
           onSelect(accordionId);
         }}
       >
-        {accordionId}
+        <p>{accordionId}</p>
+        <img src="../public/square-edit-outline.svg" alt="" />
       </div>
       {selected === accordionId ? children : null}
     </section>
