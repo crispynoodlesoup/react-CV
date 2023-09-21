@@ -94,14 +94,14 @@ function SideBar() {
           <General></General>
         </Accordion>
         <Accordion
-          accordionId={"Educational"}
+          accordionId={"Education"}
           selected={selected}
           onSelect={select}
         >
           <Educational></Educational>
         </Accordion>
         <Accordion
-          accordionId={"Practical"}
+          accordionId={"Experience"}
           selected={selected}
           onSelect={select}
         >
