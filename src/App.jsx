@@ -113,9 +113,11 @@ function SideBar() {
 }
 
 function CV() {
-  return <main>
-    <div className="CV-page">hi</div>
-  </main>;
+  return (
+    <main>
+      <div className="cv-page">hi</div>
+    </main>
+  );
 }
 
 function App() {

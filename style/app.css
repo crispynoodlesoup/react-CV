@@ -105,12 +105,17 @@ main {
   max-height: 100%;
   box-shadow: inset 8px 0 10px -8px rgb(0, 0, 0);
   padding: 32px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  place-content: center;
+  place-items: center;
 }
 
-.CV-page {
+.cv-page {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-height: 100%;
+  object-fit: cover;
   aspect-ratio: 17/22;
+  box-shadow: 0 0 12px 4px rgb(221, 221, 221);
 }
