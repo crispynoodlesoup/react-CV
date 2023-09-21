@@ -60,7 +60,7 @@ function Practical() {
 
 function Accordion({ children, accordionId, selected, onSelect }) {
   return (
-    <section className="accordion">
+    <section className={selected === accordionId ? "accordion selected" : "accordion"}>
       <div
         className="accordion-switch"
         onClick={() => {
@@ -70,7 +70,7 @@ function Accordion({ children, accordionId, selected, onSelect }) {
         <p>{accordionId}</p>
         <img src="../public/square-edit-outline.svg" alt="" />
       </div>
-      {selected === accordionId ? children : null}
+      {children}
     </section>
   );
 }
@@ -115,7 +115,7 @@ function SideBar() {
 function CV() {
   return (
     <main>
-      <div className="cv-page">hi</div>
+      <div className="cv-page"></div>
     </main>
   );
 }
