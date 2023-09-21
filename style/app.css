@@ -2,6 +2,11 @@ aside {
   padding: 24px;
 }
 
+aside h1 {
+  text-align: center;
+  font-size: 28px;
+}
+
 .cv-form {
   display: flex;
   flex-direction: column;
@@ -14,6 +19,8 @@ aside {
 }
 
 .accordion-switch {
+  margin-top: 16px;
+  border-bottom: 2px solid black;
   font-size: 20px;
   font-weight: 800;
 }
@@ -23,6 +30,7 @@ aside {
 }
 
 .accordion-content {
+  margin-top: 8px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -71,5 +79,15 @@ input[type="date"] {
 }
 
 main {
+  max-height: 100%;
   box-shadow: inset 8px 0 10px -8px rgb(0, 0, 0);
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-content: center;
+}
+
+.CV-page {
+  aspect-ratio: 17/22;
 }
