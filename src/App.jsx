@@ -55,10 +55,14 @@ function CV({ applicantInfo }) {
           <p>email: {applicantInfo.email}</p>
           <p>tel: {applicantInfo.phone}</p>
         </header>
-        <section>
-          <h3>Education</h3>
-          <h3>Experience</h3>
-        </section>
+        <div>
+          <section className="cv-section">
+            <h3>Education</h3>
+          </section>
+          <section className="cv-section">
+            <h3>Experience</h3>
+          </section>
+        </div>
       </div>
     </main>
   );

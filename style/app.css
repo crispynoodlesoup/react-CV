@@ -138,3 +138,22 @@ main {
   aspect-ratio: 17/22;
   box-shadow: 0 0 12px 4px rgb(221, 221, 221);
 }
+
+.cv-page header {
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+  background-color: hsl(215, 70%, 57%);
+}
+
+.cv-page header h2 {
+  font-size: 32px;
+}
+
+.cv-page div {
+  padding: 32px;
+}
+
+.cv-section h3 {
+  border-bottom: 2px solid black;
+}
