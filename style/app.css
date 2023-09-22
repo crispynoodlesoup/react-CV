@@ -97,25 +97,27 @@ textarea {
   width: 100%;
 }
 
-.accordion-content > button {
+.school-header {
+  border: 1px solid grey;
+  border-radius: 12px;
   padding: 8px;
-  font-size: 16px;
-  font-weight: 800;
-  color: white;
-  background-color: hsl(212, 80%, 72%);
-  border: none;
-  border-radius: 8px;
-
-  align-self: flex-end;
 }
 
-.accordion-content > button:hover {
-  background-color: hsl(212, 80%, 75%);
+.school-header:hover {
+  background-color: #eee;
   cursor: pointer;
 }
 
-.accordion-content > button:active {
-  background-color: hsl(212, 80%, 78%);
+.school-header:active {
+  background-color: #e8e8e8;
+}
+
+.selected-school .school-header {
+  border: 2px solid black;
+}
+
+.school-inputs {
+  margin: 8px 0;
 }
 
 main {
