@@ -3,7 +3,7 @@ import Accordion from "./Accordion.jsx";
 import { General, Education, Experience } from "./Inputs.jsx";
 import "../style/app.css";
 
-function SideBar({ addInfo, applicantInfo }) {
+function SideBar({ setApplicantInfo, applicantInfo }) {
   const [selected, setSelected] = useState("General");
 
   function select(accordionId) {
@@ -19,7 +19,7 @@ function SideBar({ addInfo, applicantInfo }) {
           selected={selected}
           onSelect={select}
         >
-          <General addInfo={addInfo} applicantInfo={applicantInfo}></General>
+          <General setApplicantInfo={setApplicantInfo} applicantInfo={applicantInfo}></General>
         </Accordion>
         <Accordion
           accordionId={"Education"}
@@ -27,7 +27,7 @@ function SideBar({ addInfo, applicantInfo }) {
           onSelect={select}
         >
           <Education
-            addInfo={addInfo}
+            setApplicantInfo={setApplicantInfo}
             applicantInfo={applicantInfo}
           ></Education>
         </Accordion>
@@ -37,7 +37,7 @@ function SideBar({ addInfo, applicantInfo }) {
           onSelect={select}
         >
           <Experience
-            addInfo={addInfo}
+            setApplicantInfo={setApplicantInfo}
             applicantInfo={applicantInfo}
           ></Experience>
         </Accordion>
@@ -72,25 +72,36 @@ const baseInfo = {
   name: "Rafael P.",
   email: "rafaelgpadilla42@gmail.com",
   phone: "6829705807",
-  schoolName: "",
-  studyTitle: "",
-  date: "",
-  organizationName: "",
-  position: "",
-  description: "",
+  education: [
+    {
+      name: "HSI",
+      degree: "High School Diploma",
+      date: "26-05-2022",
+      id: 0,
+    },
+    {
+      name: "what",
+      degree: "High School Diploma",
+      date: "26-05-2022",
+      id: 1,
+    },
+  ],
+  experience: [
+    {
+      organizationName: "Faith2Fight",
+      position: "Front-end Developer",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dignissimos. Molestias eum eius veniam porro aperiam esse quo velit! Est, aliquid? Consequatur, est laboriosam consequuntur reiciendis dignissimos voluptates voluptatibus quis?",
+    },
+  ],
 };
 
 function App() {
   const [applicantInfo, setApplicantInfo] = useState(baseInfo);
 
-  function addInfo(property) {
-    const newInfo = Object.assign({}, applicantInfo, property);
-    setApplicantInfo(newInfo);
-  }
-
   return (
     <>
-      <SideBar addInfo={addInfo} applicantInfo={applicantInfo}></SideBar>
+      <SideBar setApplicantInfo={setApplicantInfo} applicantInfo={applicantInfo}></SideBar>
       <CV applicantInfo={applicantInfo}></CV>
     </>
   );
