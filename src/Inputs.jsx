@@ -91,7 +91,11 @@ function Education({ setApplicantInfo, applicantInfo }) {
           >
             <div
               className="school-header"
-              onClick={() => setSelected(school.id)}
+              onClick={() => {
+                selected === school.id
+                  ? setSelected(-1)
+                  : setSelected(school.id);
+              }}
             >
               {school.name}
             </div>
