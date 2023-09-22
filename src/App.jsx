@@ -179,7 +179,15 @@ function CV({ applicantInfo }) {
   return (
     <main>
       <div className="cv-page">
-        {Object.keys(applicantInfo).map((key) => `${key}: ${applicantInfo[key]} | `)}
+        <header>
+          <h2>{applicantInfo.name}</h2>
+          <p>email: {applicantInfo.email}</p>
+          <p>tel: {applicantInfo.phone}</p>
+        </header>
+        <section>
+          <h3>Education</h3>
+          <h3>Experience</h3>
+        </section>
       </div>
     </main>
   );
