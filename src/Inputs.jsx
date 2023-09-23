@@ -43,7 +43,7 @@ function General({ setApplicantInfo, applicantInfo }) {
   );
 }
 
-function SchoolInputs({ setApplicantInfo, applicantInfo, school }) {
+function SchoolInputs({ setApplicantInfo, applicantInfo, schoolIndex }) {
   return (
     <div className="school-inputs">
       <p>
@@ -52,7 +52,12 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, school }) {
           id="school-name"
           type="text"
           placeholder="Garvey High"
-          value={applicantInfo.education[school].name}
+          value={applicantInfo.education[schoolIndex].name}
+          onChange={(e) => {
+            const newEducation = applicantInfo.education;
+            newEducation[schoolIndex].name = e.target.value;
+            setApplicantInfo({ ...applicantInfo, education: newEducation });
+          }}
         />
       </p>
       <p>
@@ -61,7 +66,12 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, school }) {
           id="study-title"
           type="text"
           placeholder="BS in Forensic Analysis"
-          value={applicantInfo.education[school].degree}
+          value={applicantInfo.education[schoolIndex].degree}
+          onChange={(e) => {
+            const newEducation = applicantInfo.education;
+            newEducation[schoolIndex].degree = e.target.value;
+            setApplicantInfo({ ...applicantInfo, education: newEducation });
+          }}
         />
       </p>
       <p>
@@ -71,7 +81,12 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, school }) {
           type="date"
           min="1924-01-01"
           max="2024-06-01"
-          value={applicantInfo.education[school].date}
+          value={applicantInfo.education[schoolIndex].date}
+          onChange={(e) => {
+            const newEducation = applicantInfo.education;
+            newEducation[schoolIndex].date = e.target.value;
+            setApplicantInfo({ ...applicantInfo, education: newEducation });
+          }}
         />
       </p>
     </div>
@@ -103,7 +118,7 @@ function Education({ setApplicantInfo, applicantInfo }) {
               <SchoolInputs
                 setApplicantInfo={setApplicantInfo}
                 applicantInfo={applicantInfo}
-                school={i}
+                schoolIndex={i}
               ></SchoolInputs>
             ) : null}
           </div>
