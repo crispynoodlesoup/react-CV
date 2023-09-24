@@ -75,7 +75,7 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, schoolIndex }) {
         />
       </p>
       <p>
-        <label htmlFor="study-date">Date of Study</label>
+        <label htmlFor="study-date">Date of Completion</label>
         <input
           id="study-date"
           type="month"

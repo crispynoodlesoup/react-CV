@@ -58,6 +58,17 @@ function CV({ applicantInfo }) {
         <div>
           <section className="cv-section">
             <h3>Education</h3>
+            <div>
+              {applicantInfo.education.map((school) => {
+                return (
+                  <div key={school.id}>
+                    <p className="school-name">{school.name}</p>
+                    <p className="school-degree">{school.degree}</p>
+                    <p className="school-date">{school.date}</p>
+                  </div>
+                );
+              })}
+            </div>
           </section>
           <section className="cv-section">
             <h3>Experience</h3>
