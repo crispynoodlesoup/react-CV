@@ -80,8 +80,8 @@ const baseInfo = {
       id: 0,
     },
     {
-      name: "what",
-      degree: "High School Diploma",
+      name: "Example College",
+      degree: "Bachelor's in Computer Science",
       date: "2023-05-26",
       id: 1,
     },

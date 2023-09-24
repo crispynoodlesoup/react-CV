@@ -135,6 +135,9 @@ textarea {
 }
 
 .school-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin: 8px 0;
 }
 

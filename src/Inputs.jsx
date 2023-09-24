@@ -8,7 +8,7 @@ function General({ setApplicantInfo, applicantInfo }) {
         <input
           id="name"
           type="text"
-          placeholder="John Doe"
+          placeholder="Peter Parker"
           value={applicantInfo.name}
           onChange={(e) =>
             setApplicantInfo({ ...applicantInfo, name: e.target.value })
@@ -20,7 +20,7 @@ function General({ setApplicantInfo, applicantInfo }) {
         <input
           id="email"
           type="email"
-          placeholder="John@example.xyz"
+          placeholder="Peter@example.xyz"
           value={applicantInfo.email}
           onChange={(e) =>
             setApplicantInfo({ ...applicantInfo, email: e.target.value })
