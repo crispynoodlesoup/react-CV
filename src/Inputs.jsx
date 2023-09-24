@@ -78,9 +78,7 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, schoolIndex }) {
         <label htmlFor="study-date">Date of Study</label>
         <input
           id="study-date"
-          type="date"
-          min="1924-01-01"
-          max="2024-06-01"
+          type="month"
           value={applicantInfo.education[schoolIndex].date}
           onChange={(e) => {
             const newEducation = applicantInfo.education;

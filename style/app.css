@@ -73,7 +73,7 @@ aside h1 {
   padding: 2px;
 }
 
-input[type="text"], input[type="tel"], input[type="email"], input[type="date"], textarea {
+input[type="text"], input[type="tel"], input[type="email"], input[type="month"], textarea {
   width: 100%;
   border: none;
   background-color: #eee;
@@ -82,8 +82,8 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="date"], 
   font-size: 14px;
 }
 
-input[type="date"] {
-  max-width: 160px;
+input[type="month"] {
+  max-width: 128px;
 }
 
 textarea {
@@ -192,7 +192,7 @@ main {
   font-size: 32px;
 }
 
-.cv-page div {
+.cv-page > div {
   padding: 32px;
 }
 

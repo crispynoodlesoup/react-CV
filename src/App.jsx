@@ -76,13 +76,13 @@ const baseInfo = {
     {
       name: "HSI",
       degree: "High School Diploma",
-      date: "2022-05-26",
+      date: "2022-05",
       id: 0,
     },
     {
       name: "Example College",
       degree: "Bachelor's in Computer Science",
-      date: "2023-05-26",
+      date: "2023-05",
       id: 1,
     },
   ],
