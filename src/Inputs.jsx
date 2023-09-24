@@ -96,6 +96,40 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, schoolIndex }) {
 function Education({ setApplicantInfo, applicantInfo }) {
   const [selected, setSelected] = useState(-1);
 
+  function addSchool() {
+    let newEducation = applicantInfo.education;
+    const maxId = newEducation
+      .map((school) => school.id)
+      .reduce((max, id) => {
+        if (max > id) return max;
+        return id;
+      }, 0); // find greatest id and return its value
+
+    let newSchool = {
+      name: "",
+      degree: "",
+      date: "",
+      id: maxId + 1,
+    };
+
+    newEducation.push(newSchool);
+    
+    setApplicantInfo({ ...applicantInfo, education: newEducation });
+    setSelected(newSchool.id);
+  }
+
+  function removeSchool(e, i) {
+    e.stopPropagation();
+
+    let newEducation = applicantInfo.education;
+    newEducation.splice(i, 1);
+
+    setApplicantInfo({
+      ...applicantInfo,
+      education: newEducation,
+    });
+  }
+
   return (
     <div className="accordion-content">
       {applicantInfo.education.map((school, i) => {
@@ -115,15 +149,8 @@ function Education({ setApplicantInfo, applicantInfo }) {
               <p>{school.name}</p>
               <img
                 src="../public/close.svg"
-                alt=""
-                onClick={(e) => {
-                  e.stopPropagation();
-
-                  let newEducation = applicantInfo.education;
-                  newEducation.splice(i, 1); // remove i-th element (this one)
-
-                  setApplicantInfo({ ...applicantInfo, education: newEducation });
-                }}
+                alt="close button"
+                onClick={(e) => removeSchool(e, i)}
               />
             </div>
             {selected === school.id ? (
@@ -136,7 +163,7 @@ function Education({ setApplicantInfo, applicantInfo }) {
           </div>
         );
       })}
-      <div className="add-button">
+      <div className="add-button" onClick={() => addSchool()}>
         +
       </div>
     </div>
