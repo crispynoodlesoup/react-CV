@@ -19,7 +19,10 @@ function SideBar({ setApplicantInfo, applicantInfo }) {
           selected={selected}
           onSelect={select}
         >
-          <General setApplicantInfo={setApplicantInfo} applicantInfo={applicantInfo}></General>
+          <General
+            setApplicantInfo={setApplicantInfo}
+            applicantInfo={applicantInfo}
+          ></General>
         </Accordion>
         <Accordion
           accordionId={"Education"}
@@ -58,13 +61,15 @@ function CV({ applicantInfo }) {
         <div>
           <section className="cv-section">
             <h3>Education</h3>
-            <div>
+            <div className="schools-list">
               {applicantInfo.education.map((school) => {
                 return (
-                  <div key={school.id}>
-                    <p className="school-name">{school.name}</p>
-                    <p className="school-degree">{school.degree}</p>
+                  <div key={school.id} className="school">
                     <p className="school-date">{school.date}</p>
+                    <div>
+                      <p className="school-name">{school.name}</p>
+                      <p className="school-degree">{school.degree}</p>
+                    </div>
                   </div>
                 );
               })}
@@ -85,15 +90,15 @@ const baseInfo = {
   phone: "6829705807",
   education: [
     {
-      name: "HSI",
+      name: "Harmony School of Innovation",
       degree: "High School Diploma",
       date: "2022-05",
       id: 0,
     },
     {
       name: "Example College",
-      degree: "Bachelor's in Computer Science",
-      date: "2023-05",
+      degree: "Bachelors in Computer Science",
+      date: "2026-05",
       id: 1,
     },
   ],
@@ -112,7 +117,10 @@ function App() {
 
   return (
     <>
-      <SideBar setApplicantInfo={setApplicantInfo} applicantInfo={applicantInfo}></SideBar>
+      <SideBar
+        setApplicantInfo={setApplicantInfo}
+        applicantInfo={applicantInfo}
+      ></SideBar>
       <CV applicantInfo={applicantInfo}></CV>
     </>
   );

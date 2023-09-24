@@ -111,7 +111,7 @@ function Education({ setApplicantInfo, applicantInfo }) {
     };
 
     newEducation.push(newSchool);
-    
+
     setApplicantInfo({ ...applicantInfo, education: newEducation });
     setSelected(newSchool.id);
   }

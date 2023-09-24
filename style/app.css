@@ -61,16 +61,13 @@ aside h1 {
 }
 
 .accordion-content {
-  margin-top: 8px;
+  margin-top: 12px;
   background-color: white;
   display: flex;
   flex-direction: column;
   gap: 8px;
   overflow: hidden;
-}
-
-.selected .accordion-content {
-  padding: 2px;
+  padding: 0 2px;
 }
 
 input[type="text"], input[type="tel"], input[type="email"], input[type="month"], textarea {
@@ -196,6 +193,32 @@ main {
   padding: 32px;
 }
 
+.cv-section {
+  margin-bottom: 16px;
+}
+
 .cv-section h3 {
   border-bottom: 2px solid black;
+}
+
+.schools-list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.school {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+}
+
+.school div {
+  margin-left: 8px;
+  padding-left: 8px;
+  border-left: 2px solid black;
+}
+
+.school-name {
+  font-weight: 600;
 }
