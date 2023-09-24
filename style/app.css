@@ -99,6 +99,8 @@ textarea {
 
 .school-header {
   border: 1px solid grey;
+  display: flex;
+  justify-content: space-between;
   border-radius: 12px;
   padding: 8px;
 }
@@ -110,6 +112,17 @@ textarea {
 
 .school-header:active {
   background-color: #e8e8e8;
+}
+
+.school-header p {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.school-header img {
+  width: 22px;
 }
 
 .selected-school .school-header {

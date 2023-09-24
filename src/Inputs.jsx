@@ -51,7 +51,7 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, schoolIndex }) {
         <input
           id="school-name"
           type="text"
-          placeholder="Garvey High"
+          placeholder="Midtown highschool"
           value={applicantInfo.education[schoolIndex].name}
           onChange={(e) => {
             const newEducation = applicantInfo.education;
@@ -65,7 +65,7 @@ function SchoolInputs({ setApplicantInfo, applicantInfo, schoolIndex }) {
         <input
           id="study-title"
           type="text"
-          placeholder="BS in Forensic Analysis"
+          placeholder="High School Diploma"
           value={applicantInfo.education[schoolIndex].degree}
           onChange={(e) => {
             const newEducation = applicantInfo.education;
@@ -112,7 +112,8 @@ function Education({ setApplicantInfo, applicantInfo }) {
                   : setSelected(school.id);
               }}
             >
-              {school.name}
+              <p>{school.name}</p>
+              <img src="../public/close.svg" alt="" />
             </div>
             {selected === school.id ? (
               <SchoolInputs
