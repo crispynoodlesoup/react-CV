@@ -123,6 +123,11 @@ textarea {
 
 .school-header img {
   width: 22px;
+  filter: invert(40%);
+}
+
+.school-header img:hover {
+  filter: none;
 }
 
 .selected-school .school-header {
