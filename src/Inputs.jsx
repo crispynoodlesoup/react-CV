@@ -113,7 +113,18 @@ function Education({ setApplicantInfo, applicantInfo }) {
               }}
             >
               <p>{school.name}</p>
-              <img src="../public/close.svg" alt="" />
+              <img
+                src="../public/close.svg"
+                alt=""
+                onClick={(e) => {
+                  e.stopPropagation();
+
+                  let newEducation = applicantInfo.education;
+                  newEducation.splice(i, 1); // remove i-th element (this one)
+
+                  setApplicantInfo({ ...applicantInfo, education: newEducation });
+                }}
+              />
             </div>
             {selected === school.id ? (
               <SchoolInputs
