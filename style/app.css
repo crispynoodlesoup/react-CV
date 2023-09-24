@@ -83,7 +83,7 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="month"],
 }
 
 input[type="month"] {
-  max-width: 128px;
+  max-width: 170px;
 }
 
 textarea {
