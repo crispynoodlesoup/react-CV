@@ -136,6 +136,9 @@ function Education({ setApplicantInfo, applicantInfo }) {
           </div>
         );
       })}
+      <div className="add-button">
+        +
+      </div>
     </div>
   );
 }
