@@ -85,6 +85,7 @@ input[type="month"] {
 
 textarea {
   resize: vertical;
+  margin-bottom: 2px;
 }
 
 .accordion-content p {
@@ -190,7 +191,7 @@ main {
 }
 
 .cv-page > div {
-  padding: 32px;
+  padding: 24px 32px;
 }
 
 .cv-section {
@@ -198,8 +199,17 @@ main {
 }
 
 .cv-section h3 {
-  font-size: 22px;
+  font-size: 20px;
   border-bottom: 2px solid black;
+}
+
+.cv-section h4 {
+  font-size: 18px;
+}
+
+.about {
+  font-size: 15px;
+  margin-top: 4px
 }
 
 .cv-item-list {
@@ -211,7 +221,7 @@ main {
 
 .school {
   display: grid;
-  grid-template-columns: 64px 1fr;
+  grid-template-columns: 60px 1fr;
 }
 
 .school div {
@@ -221,11 +231,19 @@ main {
 }
 
 .school-name {
+  font-size: 15px;
   font-weight: 600;
 }
 
+.school-degree {
+  font-size: 15px;
+}
+
+.school-date {
+  font-size: 15px;
+}
+
 .work-name {
-  font-size: 18px;
   font-weight: bold;
 }
 
@@ -235,5 +253,6 @@ main {
 }
 
 .work-description {
+  font-size: 15px;
   margin-top: 4px;
 }

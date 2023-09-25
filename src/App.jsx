@@ -60,6 +60,10 @@ function CV({ applicantInfo }) {
         </header>
         <div>
           <section className="cv-section">
+            <h4>About Me</h4>
+            <p className="about">{applicantInfo.about}</p>
+          </section>
+          <section className="cv-section">
             <h3>Education</h3>
             <div className="cv-item-list">
               {applicantInfo.education.map((school) => {
@@ -95,9 +99,10 @@ function CV({ applicantInfo }) {
 }
 
 const baseInfo = {
-  name: "Rafael P.",
+  name: "Rafael Padilla",
   email: "rafaelgpadilla42@gmail.com",
   phone: "6829705807",
+  about: "Hello! I'm Rafael Padilla, a current sophomore student at Tarrant County College. As an aspiring developer, I love testing and growing new ideas for others to experience, so please feel free to look over my projects!",
   education: [
     {
       name: "Harmony School of Innovation",
@@ -125,7 +130,7 @@ const baseInfo = {
       position: "Cybersecurity Analyst",
       description:
         "Perferendis, dignissimos. Molestias eum eius veniam porro aperiam esse quo velit! Est, aliquid? Consequatur, est laboriosam consequuntur reiciendis dignissimos voluptates voluptatibus quis?",
-      id: 0,
+      id: 1,
     },
   ],
 };

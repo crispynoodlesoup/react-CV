@@ -39,6 +39,19 @@ function General({ setApplicantInfo, applicantInfo }) {
           }
         />
       </p>
+      <p>
+        <label htmlFor="about">About You</label>
+        <textarea
+          id="about"
+          cols="30"
+          rows="10"
+          placeholder="I love hedgehogs..."
+          value={applicantInfo.about}
+          onChange={(e) =>
+            setApplicantInfo({ ...applicantInfo, about: e.target.value })
+          }
+        ></textarea>
+      </p>
     </div>
   );
 }
@@ -265,9 +278,7 @@ function Experience({ setApplicantInfo, applicantInfo }) {
             <div
               className="school-header"
               onClick={() => {
-                selected === work.id
-                  ? setSelected(-1)
-                  : setSelected(work.id);
+                selected === work.id ? setSelected(-1) : setSelected(work.id);
               }}
             >
               <p>{work.name}</p>
