@@ -117,7 +117,14 @@ const baseInfo = {
       name: "Faith2Fight",
       position: "Front-end Developer",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dignissimos. Molestias eum eius veniam porro aperiam esse quo velit! Est, aliquid? Consequatur, est laboriosam consequuntur reiciendis dignissimos voluptates voluptatibus quis?",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dignissimos. Molestias eum eius veniam porro aperiam esse quo velit! Est, aliquid? Quis optio, labore perspiciatis esse porro ratione magni expedita aperiam delectus blanditiis.",
+      id: 0,
+    },
+    {
+      name: "Made Up Corp.",
+      position: "Cybersecurity Analyst",
+      description:
+        "Perferendis, dignissimos. Molestias eum eius veniam porro aperiam esse quo velit! Est, aliquid? Consequatur, est laboriosam consequuntur reiciendis dignissimos voluptates voluptatibus quis?",
       id: 0,
     },
   ],
