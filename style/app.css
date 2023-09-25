@@ -172,7 +172,7 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  min-width: 400px;
+  min-width: 480px;
   max-height: 100%;
   object-fit: cover;
   aspect-ratio: 17/22;
