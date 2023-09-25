@@ -1,4 +1,5 @@
 import { useState } from "react";
+import closeImg from "../public/close.svg";
 
 function General({ setApplicantInfo, applicantInfo }) {
   return (
@@ -159,7 +160,7 @@ function Education({ setApplicantInfo, applicantInfo }) {
             >
               <p>{school.name}</p>
               <img
-                src="../public/close.svg"
+                src={closeImg}
                 alt="close button"
                 onClick={(e) => removeSchool(e, i)}
               />
@@ -283,7 +284,7 @@ function Experience({ setApplicantInfo, applicantInfo }) {
             >
               <p>{work.name}</p>
               <img
-                src="../public/close.svg"
+                src={closeImg}
                 alt="close button"
                 onClick={(e) => removeWork(e, i)}
               />

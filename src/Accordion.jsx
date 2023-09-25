@@ -1,3 +1,5 @@
+import editImg from "../public/square-edit-outline.svg";
+
 export default function Accordion({
   children,
   accordionId,
@@ -15,7 +17,7 @@ export default function Accordion({
         }}
       >
         <p>{accordionId}</p>
-        <img src="../public/square-edit-outline.svg" alt="" />
+        <img src={editImg} alt="" />
       </div>
       {children}
     </section>
