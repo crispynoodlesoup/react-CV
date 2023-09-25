@@ -168,21 +168,128 @@ function Education({ setApplicantInfo, applicantInfo }) {
   );
 }
 
-function Experience({ setApplicantInfo, applicantInfo }) {
+function ExperienceInputs({ setApplicantInfo, applicantInfo, workIndex }) {
   return (
     <div className="accordion-content">
       <p>
         <label htmlFor="organization-name">Organization Name</label>
-        <input id="organization-name" type="text" placeholder="Oscorp" />
+        <input
+          id="organization-name"
+          type="text"
+          placeholder="Oscorp"
+          value={applicantInfo.experience[workIndex].name}
+          onChange={(e) => {
+            const newExperience = applicantInfo.experience;
+            newExperience[workIndex].name = e.target.value;
+            setApplicantInfo({ ...applicantInfo, experience: newExperience });
+          }}
+        />
       </p>
       <p>
         <label htmlFor="position">Position Title</label>
-        <input id="position" type="text" placeholder="CEO" />
+        <input
+          id="position"
+          type="text"
+          placeholder="CEO"
+          value={applicantInfo.experience[workIndex].position}
+          onChange={(e) => {
+            const newExperience = applicantInfo.experience;
+            newExperience[workIndex].position = e.target.value;
+            setApplicantInfo({ ...applicantInfo, experience: newExperience });
+          }}
+        />
       </p>
       <p>
         <label htmlFor="job-description">Job Description:</label>
-        <textarea id="job-description" cols="30" rows="10"></textarea>
+        <textarea
+          id="job-description"
+          cols="30"
+          rows="10"
+          value={applicantInfo.experience[workIndex].description}
+          onChange={(e) => {
+            const newExperience = applicantInfo.experience;
+            newExperience[workIndex].description = e.target.value;
+            setApplicantInfo({ ...applicantInfo, description: newExperience });
+          }}
+        ></textarea>
       </p>
+    </div>
+  );
+}
+
+function Experience({ setApplicantInfo, applicantInfo }) {
+  const [selected, setSelected] = useState(-1);
+
+  function addWork() {
+    let newExperience = applicantInfo.experience;
+    const maxId = newExperience
+      .map((work) => work.id)
+      .reduce((max, id) => {
+        if (max > id) return max;
+        return id;
+      }, 0); // find greatest id and return its value
+
+    let newWork = {
+      name: "",
+      position: "",
+      description: "",
+      id: maxId + 1,
+    };
+
+    newExperience.push(newWork);
+
+    setApplicantInfo({ ...applicantInfo, experience: newExperience });
+    setSelected(newWork.id);
+  }
+
+  function removeWork(e, i) {
+    e.stopPropagation();
+
+    let newExperience = applicantInfo.experience;
+    newExperience.splice(i, 1);
+
+    setApplicantInfo({
+      ...applicantInfo,
+      experience: newExperience,
+    });
+  }
+
+  return (
+    <div className="accordion-content">
+      {applicantInfo.experience.map((work, i) => {
+        return (
+          <div
+            key={work.id}
+            className={selected === work.id ? "selected-school" : ""}
+          >
+            <div
+              className="school-header"
+              onClick={() => {
+                selected === work.id
+                  ? setSelected(-1)
+                  : setSelected(work.id);
+              }}
+            >
+              <p>{work.name}</p>
+              <img
+                src="../public/close.svg"
+                alt="close button"
+                onClick={(e) => removeWork(e, i)}
+              />
+            </div>
+            {selected === work.id ? (
+              <ExperienceInputs
+                setApplicantInfo={setApplicantInfo}
+                applicantInfo={applicantInfo}
+                workIndex={i}
+              ></ExperienceInputs>
+            ) : null}
+          </div>
+        );
+      })}
+      <div className="add-button" onClick={() => addWork()}>
+        +
+      </div>
     </div>
   );
 }

@@ -61,7 +61,7 @@ function CV({ applicantInfo }) {
         <div>
           <section className="cv-section">
             <h3>Education</h3>
-            <div className="schools-list">
+            <div className="cv-item-list">
               {applicantInfo.education.map((school) => {
                 return (
                   <div key={school.id} className="school">
@@ -77,6 +77,16 @@ function CV({ applicantInfo }) {
           </section>
           <section className="cv-section">
             <h3>Experience</h3>
+            <div className="cv-item-list">
+              {applicantInfo.experience.map((work) => {
+                return (
+                  <div key={work.id}>
+                    <p className="work-name">{work.name} - <span className="work-position">{work.position}</span></p>
+                    <p className="work-description">{work.description}</p>
+                  </div>
+                );
+              })}
+            </div>
           </section>
         </div>
       </div>
@@ -104,10 +114,11 @@ const baseInfo = {
   ],
   experience: [
     {
-      organizationName: "Faith2Fight",
+      name: "Faith2Fight",
       position: "Front-end Developer",
       description:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dignissimos. Molestias eum eius veniam porro aperiam esse quo velit! Est, aliquid? Consequatur, est laboriosam consequuntur reiciendis dignissimos voluptates voluptatibus quis?",
+      id: 0,
     },
   ],
 };
